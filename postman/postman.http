@@ -1,0 +1,5 @@
+@url_dev = http://localhost:3000
+
+### Signup
+GET  {{url_dev}}/users
+Content-Type: application/json
