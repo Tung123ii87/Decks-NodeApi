@@ -35,7 +35,9 @@ app.use('/decks', deckRoute)
 
 //Routers
 app.get('/', (req, res, next) => {
-  res.render('home')
+  return res.status(200).json({
+    msg: 'Collect success'
+  })
 })
 
 //Catch 404 Errors and forward them to error handler
