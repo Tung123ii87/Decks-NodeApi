@@ -124,9 +124,6 @@ const signIn = async (req, res, next) => {
   return res.status(200).json({ success: true })
 }
 
-const login = async (req, res, next) => {
-  res.render('auth/login')
-}
 
 const signUp = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.value.body
@@ -146,14 +143,9 @@ const signUp = async (req, res, next) => {
 
   res.setHeader('Authorization', token)
 
-  res.redirect('/users/signin');
-
-  // return res.status(201).json({ success: true })
+  return res.status(201).json({ success: true })
 }
 
-const register = async (req, res, next) => {
-  res.render('auth/register')
-}
 
 
 const secret = async (req, res, next) => {
@@ -173,6 +165,4 @@ module.exports = {
   signIn,
   signUp,
   secret,
-  login,
-  register
 }

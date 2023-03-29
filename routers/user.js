@@ -13,10 +13,8 @@ router.route('/auth/google').post(passport.authenticate('google-plus-token', { s
 router.route('/auth/facebook').post(passport.authenticate('facebook-token', { session: false }), UserController.authFacebook)
 
 router.route('/signup').post(validateBody(schemas.authSignUpSchema), UserController.signUp)
-router.route('/signup').get(UserController.register)
 
 router.route('/signin').post(validateBody(schemas.authSignInSchema), passport.authenticate('local', { session: false }), UserController.signIn)
-router.route('/signin').get(UserController.login)
 
 router.route('/secret').get(passport.authenticate('jwt', { session: false }), UserController.secret)
 

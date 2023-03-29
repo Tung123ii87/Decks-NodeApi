@@ -11,6 +11,7 @@ const { engine } = require('express-handlebars')
 
 // Setup connect mongobd by mongoose
 mongoose.connect('mongodb://127.0.0.1:27017/nodejsapi')
+  // mongoose.connect('mongodb+srv://nodeapi:16825ds5230@nodeapi.8f9nizj.mongodb.net/test')
   .then(() => console.log('Connect success DB'))
   .catch((error) => console.error(`Connect false DB ${error}`))
 
